@@ -12,19 +12,21 @@ def binary_search(numbers, number):
 	max = len(numbers)
 	halfway = int(math.ceil(max / 2))
 
+	# print 'guess: ', numbers[halfway]
 
 
-	if max < min:
+
+	if numbers == []:
 		return -1
 	elif (number == numbers[halfway]):
 		return halfway
 	elif (number > numbers[halfway]):
-		print 'too low'
+		print 'guess was too low'
 		min = halfway + 1
 		new_numbers = numbers[min:]
 		return binary_search(new_numbers, number)
 	elif (number < numbers[halfway]):
-		print 'too high'
+		print 'guess was too high'
 		halfway = halfway - 1
 		new_numbers = numbers[:halfway]
 		return binary_search(new_numbers, number)
