@@ -12,26 +12,33 @@ def binary_search(array, target):
 
 	while min < max:
 		mid = int((min + max) / 2)
-		print 'searching for %d in %s' % (target, array)
-		print 'guess: %d' % array[mid]
 		guess = array[mid]
+		print 'searching for %d in %s' % (target, array)
+		print 'guess: %d, index of guess: %d' % (guess, mid)
+
 		if target == guess:
 			return '%d was found at index %d' % (target, mid)
 		elif guess < target:
 			print 'guess was too low'
-			if min == mid: # this means the element is not found in the array
+			if min == mid: # if the avg of min + max is still equal to mid, this means we've eliminated all other options already
+										 # so we can tell the loop to break.
 				break
 			min = mid + 1
+			print 'new min: %d' % min
 		elif guess > target:
 			print 'guess was too high'
 			max = mid - 1
+			print 'new max: %d' % max
 
 
 
 
-
-print binary_search(primes, 72)
+print binary_search(primes, -2) # in this case, max will = -1 while min = 0, so the loop will break on its own, returning nothing.
+print "*" * 100
 print binary_search(primes, 17)
+print "*" * 100
 print binary_search(primes, 10)
+print "*" * 100
 print binary_search(primes, 100)
+print "*" * 100
 
