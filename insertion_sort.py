@@ -23,7 +23,6 @@ def insertion_sort(array):
 				# print '%d is greater than array[%d] (%d)' % (key, j, array[j]) # for testing purposes
 				# print array
 				break
-
 	return array
 
 print insertion_sort(numbers)
