@@ -1,5 +1,5 @@
 def recursive_palindrome(word):
-	print 'Is %s a palindrome?' % word
+	print 'Is "%s" a palindrome?' % word
 
 	if len(word) == 1: #or len(word) == 0:
 		return True
