@@ -4,7 +4,7 @@ def recursive_powers(number, power):
 	elif power == 1:
 		return number
 	elif power > 1 and power % 2 == 0:
-		y = recursive_powers(number, power/2) * recursive_powers(number, power/2)
+		y = recursive_powers(number, power/2)
 		return y * y
 	elif power > 1 and power % 2 != 0:
 		return number * recursive_powers(number, power - 1)
