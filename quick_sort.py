@@ -16,27 +16,43 @@ def quick_sort(array, low, hi):
 
 def partition(array, low, hi): # this function 'partitions' the input array into 
 
+	print 'PARTITION [%s:%s]' % (low, hi)
+
 	pivot_index = get_pivot(array, low, hi)
 	pivot_value = array[pivot_index]
 	border = low # all elements that are less than pivot_value will be placed left of the border
 
+	# ruler = '.' # for visualization
+
 	
 
-	array[pivot_index], array[low] = array[low], array[pivot_index] # swap the pivot to array[0]
+	array[pivot_index], array[low] = array[low], array[pivot_index] # swap the pivot to array[low]
 
 	for i in range (low, hi + 1):
-		print ('%s' % array)
-		sys.stdout.flush()
-		if border < 10:
-			print (' . ') * (border - 1), 'B'
-		elif border > 10:
-			print (' .  ') * (border - 1), 'B'
-		sys.stdout.flush()
-		print 'border is %s' % border
-		time.sleep(0.01)
+		# print ('%s' % array)
+		# sys.stdout.flush()
+
+		# for element in range (low, border + 1):
+		# 	if array[element] < 9:
+		# 		ruler += '...'
+		# 	elif array[element] > 9:
+		# 		ruler += '....'
+
+		# 	# ruler += ('.' * (len('%s' % element) + 3))
+
+		# print ruler + 'B'
+		# if border < 10:
+		# 	print (' . ') * (border), 'B'
+		# elif border > 10:
+		# 	print (' . ') * 10, (' .  ') * (border - 10), 'B'
+		# sys.stdout.flush()
+		# print 'border is %s [%s]' % (array[border], border)
+		# time.sleep(0.01)
+
 		if array[i] < pivot_value:
 			border += 1
 			array[i], array[border] = array[border], array[i]
+
 	array[low], array[border] = array[border], array[low]
 	return border # return the border of the new partition
 
