@@ -36,3 +36,4 @@ def merge(array, first, middle, last):
 
 
 print merge_sort(shuffled_numbers, 0, len(numbers) - 1)
+# print merge_sort([1], 0, 0)
