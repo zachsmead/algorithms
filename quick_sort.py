@@ -1,8 +1,21 @@
+import sys
+import time
+import random
+
+numbers = range(30)
+shuffled_numbers = random.sample(numbers, len(numbers))
+
 def quick_sort(array, low, hi):
+
+	print ('%s' % array)
+	sys.stdout.flush()
+	time.sleep(0.01)
+
 	if low < hi: # this means that there's more than 1 element in the input array
 		p = partition(array, low, hi) 
 		quick_sort(array, low, p) # call quicksort on the subarray array[low:p]
 		quick_sort(array, p + 1, hi) #  call quicksort on the subarray array[p + 1:hi]
+	return array
 
 
 
@@ -29,8 +42,12 @@ def get_pivot(array, low, hi): # this function contains a conditional that gives
 	pivot_index = hi
 
 	if array[low] < array[mid]:
-		if array[mid] < array[high]:
+		if array[mid] < array[hi]:
 			pivot_index = mid
 	elif array[low] < array[hi]:
 			pivot_index = low
 	return pivot_index
+
+print quick_sort(shuffled_numbers, 0, len(numbers) - 1)
+
+
