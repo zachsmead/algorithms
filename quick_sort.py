@@ -14,7 +14,7 @@ def quick_sort(array, low, hi):
 
 
 
-def partition(array, low, hi): # this function 'partitions' the input array into 
+def partition(array, low, hi): # this function 'partitions' the input array into subarrays
 
 	print 'PARTITION [%s:%s]' % (low, hi)
 
@@ -28,27 +28,8 @@ def partition(array, low, hi): # this function 'partitions' the input array into
 
 	array[pivot_index], array[low] = array[low], array[pivot_index] # swap the pivot to array[low]
 
-	for i in range (low, hi + 1):
-		# print ('%s' % array)
-		# sys.stdout.flush()
-
-		# for element in range (low, border + 1):
-		# 	if array[element] < 9:
-		# 		ruler += '...'
-		# 	elif array[element] > 9:
-		# 		ruler += '....'
-
-		# 	# ruler += ('.' * (len('%s' % element) + 3))
-
-		# print ruler + 'B'
-		# if border < 10:
-		# 	print (' . ') * (border), 'B'
-		# elif border > 10:
-		# 	print (' . ') * 10, (' .  ') * (border - 10), 'B'
-		# sys.stdout.flush()
-		# print 'border is %s [%s]' % (array[border], border)
-		# time.sleep(0.01)
-
+	for i in range (low, hi + 1): # loop through the subarray. if the element at [i] < pivot_value, increment
+																# border and swap border with the element at position [i]
 		if array[i] < pivot_value:
 			border += 1
 			array[i], array[border] = array[border], array[i]
