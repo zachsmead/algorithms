@@ -42,7 +42,7 @@ def partition(array, low, hi): # this function 'partitions' the input array into
 	print 'final border value for this partition: % s at position %s' % (array[border], border)
 
 	print '*' * 100
-	return border # return the border of the new partition
+	return border # return the index of the last element that is less than pivot_value
 
 
 
