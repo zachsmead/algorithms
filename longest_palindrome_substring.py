@@ -12,7 +12,6 @@ def longest_palindrome_substring(word, substring):
 			return longest_palindrome_substring(word, substring)
 	elif recursive_palindrome(substring) == False:
 		return longest_palindrome_substring(word, substring[0:len(substring) - 1])
-
 	return longest
 
 def recursive_palindrome(word):

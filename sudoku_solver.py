@@ -10,13 +10,24 @@ sudoku_board = [
 	['.', '.', '.', '.', '.', '.', '.', '.', '.']
 ]
 
+class Cell(object):
+	global sudoku_board
+
+	def __init__(self):
+		self.value = '.'
+		self.possible_values = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+
+	def eliminate_values(number_array):
+		for value in number_array:
+			if value != '.':
+				self.possible_values.remove(value)
+				if len(self.possible_values) == 1:
+					self.value = self.possible_values[0]
+
+
 def print_board(board):
 	for row in board:
 		print row
-		# line = ''
-		# for column in row:
-		# 	line += column
-		# print line
 			
 
 def populate_board(board, coordinate_pairs):
@@ -31,8 +42,6 @@ def place_number_on_board(board, coordinate, number):
 	column = int(coordinate[3])
 	print '%s goes to row %s, column %s' % (number, row, column)
 	board[row][column] = number
-	# print board[row][column]
-	# print sudoku_board
 
 def row_check():
 	pass
