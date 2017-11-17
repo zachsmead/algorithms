@@ -11,10 +11,8 @@ sudoku_board = [
 ]
 
 def print_board(board):
-	print board[4]
 	for row in board:
-		pass
-		# print row
+		print row
 		# line = ''
 		# for column in row:
 		# 	line += column
@@ -33,8 +31,17 @@ def place_number_on_board(board, coordinate, number):
 	column = int(coordinate[3])
 	print '%s goes to row %s, column %s' % (number, row, column)
 	board[row][column] = number
-	print board[row][column]
-	print sudoku_board
+	# print board[row][column]
+	# print sudoku_board
+
+def row_check():
+	pass
+
+def column_check():
+	pass
+
+def square_check():
+	pass
 
 def sudoku_solver():
 	pass
@@ -79,9 +86,6 @@ print sudoku_board
 print 'populating the board...'
 populate_board(sudoku_board, coordinate_pairs_1)
 print_board(sudoku_board)
-
-# print coordinate_pairs_1
-# print coordinate_pairs_1['0, 0']
 
 
 
