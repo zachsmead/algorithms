@@ -1,6 +1,3 @@
-longest = ''
-
-# substring reduces the original word from right to left. addstring reduces the original word from left to right. 
 def longest_palindrome_substring_2(word):
 	longest_substring = longest_palindrome_substring(word, word)
 	return '"%s" is the longest palindrome substring in "%s."' % (longest_substring, word)
@@ -31,15 +28,7 @@ def recursive_palindrome(word):
 		return recursive_palindrome(word[1:len(word) - 1])
 
 
-# print recursive_palindrome('amanaplanacanalpanama')
-# print recursive_palindrome('racecar')
-# print recursive_palindrome('racekar')
-# print recursive_palindrome('aracekar')
-# print recursive_palindrome('carrot')
-
-
 print longest_palindrome_substring('aracekar', 'aracekar')
 print longest_palindrome_substring('amanaplanacanalpanama', 'amanaplanacanalpanama')
-print longest_palindrome_substring('carrot', 'carrot')
 
 print longest_palindrome_substring_2('carrot')
