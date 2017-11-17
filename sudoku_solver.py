@@ -1,14 +1,40 @@
-sudoku_board = [['.'] * 9] * 9
+sudoku_board = [
+	['.', '.', '.', '.', '.', '.', '.', '.', '.'],
+	['.', '.', '.', '.', '.', '.', '.', '.', '.'],
+	['.', '.', '.', '.', '.', '.', '.', '.', '.'],
+	['.', '.', '.', '.', '.', '.', '.', '.', '.'],
+	['.', '.', '.', '.', '.', '.', '.', '.', '.'],
+	['.', '.', '.', '.', '.', '.', '.', '.', '.'],
+	['.', '.', '.', '.', '.', '.', '.', '.', '.'],
+	['.', '.', '.', '.', '.', '.', '.', '.', '.'],
+	['.', '.', '.', '.', '.', '.', '.', '.', '.']
+]
 
-def populate_board(coordinate_pairs):
-	for number in coordinate_pairs:
-		place_number_on_board(number, coordinate_pairs[number])
+def print_board(board):
+	print board[4]
+	for row in board:
+		pass
+		# print row
+		# line = ''
+		# for column in row:
+		# 	line += column
+		# print line
+			
 
-def place_number_on_board(coordinate, number):
-	global sudoku_board
+def populate_board(board, coordinate_pairs):
+	for key in coordinate_pairs:
+		print 'coordinate: %s' % key
+		print 'number: %s' % coordinate_pairs[key]
+		place_number_on_board(board, key, coordinate_pairs[key])
+
+def place_number_on_board(board, coordinate, number):
+	print_board(board)
 	row = int(coordinate[0])
 	column = int(coordinate[3])
-	sudoku_board[row][column] = number
+	print '%s goes to row %s, column %s' % (number, row, column)
+	board[row][column] = number
+	print board[row][column]
+	print sudoku_board
 
 def sudoku_solver():
 	pass
@@ -51,8 +77,8 @@ coordinate_pairs_1 = {
 print 'generating a blank board...'
 print sudoku_board
 print 'populating the board...'
-populate_board(coordinate_pairs_1)
-print sudoku_board
+populate_board(sudoku_board, coordinate_pairs_1)
+print_board(sudoku_board)
 
 # print coordinate_pairs_1
 # print coordinate_pairs_1['0, 0']
